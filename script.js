@@ -5,7 +5,17 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    numRows+=1;
+    let grid = document.getElementById("grid");
+    if(numCols == 0){
+        numCols+=1;
+    }
+    let new_row = document.createElement("tr");
+    let new_col = document.createElement("td");
+    for(let j = 0; j<numCols; j++){
+        new_row.appendChild(new_col);
+    }
+    grid.appendChild(new_row);
 }
 
 // Add a column
