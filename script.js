@@ -44,7 +44,12 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    numCols-=1;
+    let all_rows =  document.getElementsByTagName('tr');
+    for(let j = 0; j<numRows; j++){
+        let col = all_rows[j].querySelector("td");
+        all_rows[j].removeChild(col);
+    }
 }
 
 // Set global variable for selected color
