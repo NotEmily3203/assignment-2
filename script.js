@@ -11,8 +11,9 @@ function addR() {
         numCols+=1;
     }
     let new_row = document.createElement("tr");
-    let new_col = document.createElement("td");
     for(let j = 0; j<numCols; j++){
+        //idk why this has to be in the for loop for it to work correctly
+        let new_col = document.createElement("td");
         new_row.appendChild(new_col);
     }
     grid.appendChild(new_row);
@@ -20,7 +21,17 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    numCols+=1;
+    if(numRows==0){
+        addR();
+    }else{
+        let all_rows =  document.getElementsByTagName('tr');
+        for(let j = 0; j<numRows; j++){
+            //idk why this has to be in the for loop for it to work correctly
+            let new_col = document.createElement('td');
+            all_rows[j].appendChild(new_col);
+        }
+    }
 }
 
 // Remove a row
