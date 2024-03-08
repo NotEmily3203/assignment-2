@@ -44,11 +44,16 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    numCols-=1;
-    let all_rows =  document.getElementsByTagName('tr');
-    for(let j = 0; j<numRows; j++){
-        let col = all_rows[j].querySelector("td");
-        all_rows[j].removeChild(col);
+    if(numCols!=0){
+        numCols-=1;
+        let all_rows =  document.getElementsByTagName('tr');
+        for(let j = 0; j<numRows; j++){
+            let col = all_rows[j].querySelector("td");
+            all_rows[j].removeChild(col);
+        }
+        if(numCols==0){
+            numRows=0;
+        }
     }
 }
 
