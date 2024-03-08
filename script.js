@@ -14,6 +14,7 @@ function addR() {
     for(let j = 0; j<numCols; j++){
         //idk why this has to be in the for loop for it to work correctly
         let new_col = document.createElement("td");
+        new_col.onclick = function() {new_col.style.backgroundColor=colorSelected};
         new_row.appendChild(new_col);
     }
     grid.appendChild(new_row);
@@ -29,6 +30,7 @@ function addC() {
         for(let j = 0; j<numRows; j++){
             //idk why this has to be in the for loop for it to work correctly
             let new_col = document.createElement('td');
+            new_col.onclick = function() {new_col.style.backgroundColor=colorSelected};
             all_rows[j].appendChild(new_col);
         }
     }
