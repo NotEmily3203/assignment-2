@@ -89,5 +89,12 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    let all_rows =  document.getElementsByTagName('tr');
+    for(let i = 0; i<numRows; i++){
+        let curr_row = all_rows[i];
+        let each_col = curr_row.getElementsByTagName('td');
+        for(let j = 0; j<numCols; j++){
+            each_col[j].style.backgroundColor="white";
+        }
+    }
 }
