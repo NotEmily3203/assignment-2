@@ -60,6 +60,8 @@ function removeC() {
         }
         if(numCols==0){
             numRows=0;
+            let grid = document.getElementById("grid");
+            grid.removeChild(grid.firstElementChild);
         }
     }
 }
